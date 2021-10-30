@@ -14,6 +14,12 @@ namespace power.turbine
 
         [SerializeField]
         private Transform arrow = null;
+        [SerializeField]
+        private Renderer arrowRenderer = null;
+
+        [SerializeField]
+        private Gradient colourScheme = new Gradient();
+
         
         private void Start()
         {
@@ -23,6 +29,7 @@ namespace power.turbine
         private void FixedUpdate()
         {
             Rotate();
+            SetColour();
         }
 
         private void Rotate()
@@ -39,6 +46,18 @@ namespace power.turbine
         {
             this.t = t;
             lastDirection = arrow.transform.up;
+        }
+
+        private void SetColour()
+        {
+            if (!arrowRenderer)
+                return;
+
+                // My head hurts too much to do the actual inverse match. Oh well.
+                float t = (arrow.transform.up.x + 1) / 2;
+
+                Color32 colour = colourScheme.Evaluate(t);
+                arrowRenderer.material.SetColor("_BaseColor", (Color)colour);
         }
     }
 }
