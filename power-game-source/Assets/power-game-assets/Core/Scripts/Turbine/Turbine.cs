@@ -1,4 +1,5 @@
 using UnityEngine;
+using power.data;
 using power.manager;
 
 namespace power.turbine
@@ -9,6 +10,9 @@ namespace power.turbine
     [RequireComponent(typeof(RotateTurbine))]
     public class Turbine : MonoBehaviour
     {
+        [SerializeField]
+        private PowerData data = null;
+
         // If memory serves turbines are non-efficient for 33% of the time.
         // Doesn't make for fun gameplay though
         // Going to use some artistic licensing here...
@@ -24,29 +28,21 @@ namespace power.turbine
             turbineRotate = this.GetComponent<RotateTurbine>();
         }
 
-        private float elapsed = 0.0f;
-
         private void FixedUpdate()
         {
-            if (elapsed < 5.0f)
-            {
-                IncreasePower();
-            }
-                
-
-            elapsed += Time.deltaTime;
+            IncreasePower();             
         }
 
         private void IncreasePower()
         {
             // Increases the amount of power by the current wattage per in game hour.
             heldPower += (Mathf.Lerp(minMegaWatt, maxMegaWatt, turbineRotate.GetEfficiency()) * Time.deltaTime) / GameStateManager.hourSpeed;
-            //heldPower += 3.45f * Time.deltaTime / GameStateManager.hourSpeed;
         }
 
         public void CollectPower()
         {
-
+            data.powerCollected += heldPower;
+            heldPower = 0.0f;
         }
     }
 }
