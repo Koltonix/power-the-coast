@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using power.turbine;
 
 namespace power.manager
@@ -7,6 +8,9 @@ namespace power.manager
     {
         public static float hourSpeed = 5.0f;
         private float elapsed = 0.0f;
+
+        [SerializeField]
+        private Image hourImage = null;
 
         private void FixedUpdate()
         {
@@ -17,6 +21,8 @@ namespace power.manager
             }
 
             elapsed += Time.deltaTime;
+
+            hourImage.fillAmount = elapsed / hourSpeed;
         }
 
         private void InvokePowerCollection()
