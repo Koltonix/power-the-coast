@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233266560009860209}
-  m_Layer: 0
+  - component: {fileID: 1627989811801530771}
+  - component: {fileID: 617946449369399586}
+  m_Layer: 11
   m_Name: Turbine_PRF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +37,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1627989811801530771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897882183758065355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 21, z: 5}
+  m_Center: {x: 0, y: 11, z: 0}
+--- !u!114 &617946449369399586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897882183758065355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337437d77c033e742b713407125ada48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 90, y: 360}
+  objToRotate: {fileID: 332350932016739450}
+  canRotate: 1
+  invertDirection: 1
 --- !u!1 &2797363597909736936
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +77,7 @@ GameObject:
   - component: {fileID: 6935721860207171156}
   - component: {fileID: 199903622239660171}
   - component: {fileID: 4818648446051721677}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Propellor.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,9 +91,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2797363597909736936}
-  m_LocalRotation: {x: -0.37637037, y: 0.5986195, z: -0.59861946, w: -0.37637055}
-  m_LocalPosition: {x: 0.022756103, y: -0.074833184, z: 0.009318672}
-  m_LocalScale: {x: 2.1391194, y: 2.1391194, z: 0.5319707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 332350932016739450}
   m_RootOrder: 2
@@ -127,7 +158,7 @@ GameObject:
   - component: {fileID: 1292955706223071647}
   - component: {fileID: 6003203416300098015}
   - component: {fileID: 5676135584515791123}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +239,7 @@ GameObject:
   - component: {fileID: 3742240600894522936}
   - component: {fileID: 1512768278039585680}
   - component: {fileID: 710003397178750488}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sea Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +320,7 @@ GameObject:
   - component: {fileID: 2335877814157716580}
   - component: {fileID: 3789947788681205137}
   - component: {fileID: 8107235431335718897}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Propellor.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,9 +334,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7000523481043337625}
-  m_LocalRotation: {x: -0.35719338, y: -0.6102564, z: 0.6102564, w: -0.35719353}
-  m_LocalPosition: {x: 0.022756103, y: -0.074833184, z: 0.009318672}
-  m_LocalScale: {x: 2.1391194, y: 2.1391194, z: 0.5319707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 332350932016739450}
   m_RootOrder: 1
@@ -370,7 +401,7 @@ GameObject:
   - component: {fileID: 1273526152238169182}
   - component: {fileID: 4779002522249664295}
   - component: {fileID: 7485475878346023434}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Propellor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,9 +415,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7701253693873174930}
-  m_LocalRotation: {x: 0.7071067, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.022756103, y: -0.074833, z: 0.82038313}
-  m_LocalScale: {x: 2.1391194, y: 2.1391194, z: 0.5319707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 332350932016739450}
   m_RootOrder: 0
@@ -451,7 +482,7 @@ GameObject:
   - component: {fileID: 8924597158078297842}
   - component: {fileID: 460775011636271094}
   - component: {fileID: 5826050238801996737}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +498,7 @@ Transform:
   m_GameObject: {fileID: 7706693229411035062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 15.264772, z: 0.3773807}
-  m_LocalScale: {x: 0.40430394, y: 0.71898985, z: 0.8202003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1233266560009860209}
   m_RootOrder: 3
@@ -532,7 +563,7 @@ GameObject:
   - component: {fileID: 332350932016739450}
   - component: {fileID: 2399866958280765830}
   - component: {fileID: 5854353182760075}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,9 +577,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7746517672659739607}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 15.277296, z: -1.159776}
-  m_LocalScale: {x: 0.46748206, y: 1, z: 0.467482}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1273526152238169182}
   - {fileID: 2335877814157716580}
@@ -616,7 +647,7 @@ GameObject:
   - component: {fileID: 4093872205031015437}
   - component: {fileID: 5344002294588738176}
   - component: {fileID: 5671323138743599418}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Back Fin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +663,7 @@ Transform:
   m_GameObject: {fileID: 8502320015981104624}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 15.789089, z: 1.1231223}
-  m_LocalScale: {x: 1, y: 0.12680618, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1233266560009860209}
   m_RootOrder: 0
