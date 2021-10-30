@@ -26,7 +26,6 @@ namespace power.utilities
         {
             currentSpeed = GetRandomSpeed();
             direction = GetRandomDirection();
-            Debug.Log("CHANGE");
         }
 
         private float GetRandomSpeed()

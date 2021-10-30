@@ -21,13 +21,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water_MAT
-  m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
-  m_ShaderKeywords: _DISABLE_SSR_TRANSPARENT _NORMALMAP_TANGENT_SPACE
+  m_Shader: {fileID: -6465566751694194690, guid: 53f0acea51efe3442a16c07828c91fe6, type: 3}
+  m_ShaderKeywords: _DISABLE_SSR_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2225
-  stringTagMap: {}
+  stringTagMap:
+    MotionVector: User
   disabledShaderPasses:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
@@ -130,6 +131,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_2369f763e8454871960fe7af2bdf6567: 5
+    - Vector1_2b3ff0c6d8894a0fbe2c55adb8f120d1: 0.77
+    - Vector1_4cd18dedf75d42048c8e06c009008610: 1
+    - Vector1_58dd7dfdf6a94f91a483b6863ff3f17d: 0
+    - Vector1_aa4dfad6072640ba80494763e9c26d2d: 2
+    - Vector1_b71d4780d0d14c8f977b560d672e0aff: 1
+    - Vector1_bf8b4c2c6b0b45eca944c1c0fb7509f4: 1.75
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -200,6 +208,8 @@ Material:
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
+    - _RenderQueueType: 1
+    - _RequireSplitLighting: 0
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
@@ -209,10 +219,12 @@ Material:
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 8
+    - _StencilRefDistortionVec: 4
     - _StencilRefGBuffer: 10
     - _StencilRefMV: 40
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
     - _SubsurfaceMask: 1
@@ -239,6 +251,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
+    - Color_5259385414744c43b157fb6fc184f24d: {r: 0.1254902, g: 0.4627451, b: 0.8, a: 0}
+    - Color_70f59672ab614d87a1b78c3191af29f7: {r: 0.074626185, g: 0.21500227, b: 0.40566036, a: 0}
     - _BaseColor: {r: 0.12482201, g: 0.464568, b: 0.8018868, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.12482198, g: 0.4645679, b: 0.8018868, a: 1}
