@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using power.turbine;
 
 namespace power.controller
 {
@@ -15,6 +16,10 @@ namespace power.controller
         [SerializeField]
         private LayerMask hitMask = new LayerMask();
 
+        [SerializeField]
+        [Range(0, 1)]
+        private float speedChange = 0.1f;
+
         private void Start()
         {
             if (mainCamera)
@@ -23,14 +28,29 @@ namespace power.controller
 
         private void Update()
         {
-                
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+                ChangeTurbineSpeed(1);
+
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+                ChangeTurbineSpeed(-1);
         }
-        
+
+        private void ChangeTurbineSpeed(int dir)
+        {
+            RaycastHit hit = GetHitFromMouse();
+            if (!hit.collider)
+                return;
+
+            RotateTurbine turbineSpeed = hit.collider.GetComponent<RotateTurbine>();
+
+            if (turbineSpeed)
+                turbineSpeed.t += speedChange * dir;
+        }
 
         private RaycastHit GetHitFromMouse()
         {
             
-            Vector3 screenPos = Mouse.current.position.ReadValue();
+            Vector3 screenPos = Input.mousePosition;
             Ray ray = mainCamera.ScreenPointToRay(screenPos);
 
             RaycastHit hit;

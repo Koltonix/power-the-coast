@@ -20,6 +20,8 @@ namespace power.turbine
 
         private void FixedUpdate()
         {
+            t = Mathf.Clamp01(t);
+
             SetSpeed(t);
 
             if (canRotate)
