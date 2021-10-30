@@ -7,11 +7,9 @@ namespace power.turbine
         [SerializeField]
         private float speed = 1.25f;
         [SerializeField]
-        private Vector2 directionBounds = new Vector2(-1.0f, 1.0f);
+        private Vector2 rotationBounds = new Vector2(90.0f, -90.0f);
 
-        private float t = 0.0f;
-        private Vector3 lastDirection = Vector3.zero;
-
+        public float t = 0.0f;
         [SerializeField]
         private Transform arrow = null;
         [SerializeField]
@@ -20,32 +18,28 @@ namespace power.turbine
         [SerializeField]
         private Gradient colourScheme = new Gradient();
 
-        
-        private void Start()
-        {
-            SetTarget(1.0f);
-        }
-
         private void FixedUpdate()
         {
             Rotate();
             SetColour();
         }
 
+        // This whole method is stupid and I hate it.
+        // But it works.
         private void Rotate()
         {
-            arrow.transform.up = Vector3.Lerp(arrow.transform.up, new Vector3(GetTarget(), lastDirection.y, lastDirection.z), Time.deltaTime * speed);
+            Vector3 velocity = Vector3.zero;
+
+            Vector3 startRot = arrow.transform.eulerAngles;
+            startRot.x = 0; startRot.y = 0;
+            Vector3 targetRot = new Vector3(0, 0, GetTarget());
+
+            arrow.transform.rotation = Quaternion.Slerp(Quaternion.Euler(startRot), Quaternion.Euler(targetRot), speed * Time.deltaTime);
         }
 
         private float GetTarget()
         {
-            return Mathf.Lerp(directionBounds.x, directionBounds.y, t);
-        }
-
-        public void SetTarget(float t)
-        {
-            this.t = t;
-            lastDirection = arrow.transform.up;
+            return Mathf.Lerp(rotationBounds.x, rotationBounds.y, t);
         }
 
         private void SetColour()

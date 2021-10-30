@@ -34,7 +34,7 @@ namespace power.turbine
         private void FixedUpdate()
         {
             IncreasePower();             
-            meter.SetTarget(turbineRotate.t);
+            meter.t = turbineRotate.t;
         }
 
         private void IncreasePower()
