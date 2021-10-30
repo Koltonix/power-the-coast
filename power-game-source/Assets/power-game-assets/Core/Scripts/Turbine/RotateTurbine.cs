@@ -7,6 +7,7 @@ namespace power.turbine
         [SerializeField]
         private Vector2 speed = new Vector2(0, 10.0f);
         private float currentSpeed = 0.0f;
+        private float tStart = 0.5f;
 
         [SerializeField]
         private Transform objToRotate = null;
@@ -18,7 +19,7 @@ namespace power.turbine
 
         private void Start()
         {
-            SetSpeed(0.5f);
+            SetSpeed(tStart);
         }
 
         private void FixedUpdate()
@@ -38,6 +39,11 @@ namespace power.turbine
         private void SetSpeed(float t)
         {
             currentSpeed = Mathf.Lerp(speed.x, speed.y, t);
+        }
+
+        public float GetEfficiency()
+        {
+            return currentSpeed / (speed.x + speed.y);
         }
     }
 }
