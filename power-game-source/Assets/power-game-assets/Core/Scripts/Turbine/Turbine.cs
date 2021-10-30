@@ -13,7 +13,8 @@ namespace power.turbine
         [SerializeField]
         private PowerData data = null;
 
-        // If memory serves turbines are non-efficient for 33% of the time.
+        // If memory serves turbines are non-efficient for 33% of the time. 
+        // Or efficient only 30% of the time. One of them.
         // Doesn't make for fun gameplay though
         // Going to use some artistic licensing here...
         private float maxMegaWatt = 3.45f;
@@ -21,6 +22,8 @@ namespace power.turbine
 
         private float heldPower = 0.0f;
 
+        [SerializeField]
+        private RadialMeter meter = null;
         private RotateTurbine turbineRotate = null;
 
         private void Start()
@@ -31,12 +34,13 @@ namespace power.turbine
         private void FixedUpdate()
         {
             IncreasePower();             
+            meter.SetTarget(turbineRotate.t);
         }
 
         private void IncreasePower()
         {
             // Increases the amount of power by the current wattage per in game hour.
-            heldPower += (Mathf.Lerp(minMegaWatt, maxMegaWatt, turbineRotate.GetEfficiency()) * Time.deltaTime) / GameStateManager.hourSpeed;
+            heldPower += (Mathf.Lerp(minMegaWatt, maxMegaWatt, turbineRotate.t) * Time.deltaTime) / GameStateManager.hourSpeed;
         }
 
         public void CollectPower()

@@ -34,7 +34,7 @@ namespace power.turbine
 
         private void Rotate()
         {
-            arrow.transform.up = Vector3.Slerp(arrow.transform.up, new Vector3(GetTarget(), lastDirection.y, lastDirection.z), Time.deltaTime * speed);
+            arrow.transform.up = Vector3.Lerp(arrow.transform.up, new Vector3(GetTarget(), lastDirection.y, lastDirection.z), Time.deltaTime * speed);
         }
 
         private float GetTarget()
@@ -42,7 +42,7 @@ namespace power.turbine
             return Mathf.Lerp(directionBounds.x, directionBounds.y, t);
         }
 
-        private void SetTarget(float t)
+        public void SetTarget(float t)
         {
             this.t = t;
             lastDirection = arrow.transform.up;
