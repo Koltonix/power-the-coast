@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2165.38, g: 2275.7305, b: 3336.9883, a: 1}
+  m_IndirectSpecularColor: {r: 2163.0527, g: 2270.1426, b: 3303.3047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1303,14 +1303,6 @@ PrefabInstance:
     - target: {fileID: 1897882183758065355, guid: df218b0636079da4dbf17514b3a65066, type: 3}
       propertyPath: m_Name
       value: Turbine_PRF
-      objectReference: {fileID: 0}
-    - target: {fileID: 6109543978403138411, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: speedRange.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6109543978403138411, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: speedRange.y
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df218b0636079da4dbf17514b3a65066, type: 3}
