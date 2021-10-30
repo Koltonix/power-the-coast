@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2162.748, g: 2269.162, b: 3315.836, a: 1}
+  m_IndirectSpecularColor: {r: 2163.461, g: 2270.8535, b: 3320.9922, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1121,7 +1121,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   volumeAnchorOverride: {fileID: 0}
-  antialiasing: 2
+  antialiasing: 3
   SMAAQuality: 2
   dithering: 1
   stopNaNs: 0
@@ -1304,14 +1304,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 331553661622848086, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: directionBounds.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 331553661622848086, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: directionBounds.y
-      value: -90
-      objectReference: {fileID: 0}
     - target: {fileID: 1233266560009860209, guid: df218b0636079da4dbf17514b3a65066, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1360,17 +1352,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turbine_PRF
       objectReference: {fileID: 0}
-    - target: {fileID: 4958213642099271098, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
+    - target: {fileID: 6109543978403138411, guid: df218b0636079da4dbf17514b3a65066, type: 3}
+      propertyPath: speedRange.x
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 4958213642099271098, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958213642099271098, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+    - target: {fileID: 6109543978403138411, guid: df218b0636079da4dbf17514b3a65066, type: 3}
+      propertyPath: speedRange.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df218b0636079da4dbf17514b3a65066, type: 3}

@@ -7,6 +7,8 @@ namespace power.turbine
         [SerializeField]
         private Vector2 speed = new Vector2(0, 10.0f);
         private float currentSpeed = 0.0f;
+        [SerializeField]
+        private float increaseSpeed = 0.01f;
         [Range(0, 1)]
         public float t = 0.5f;
 
@@ -14,12 +16,17 @@ namespace power.turbine
         private Transform objToRotate = null;
 
         [SerializeField]
+        private bool graduallyIncreaseSpeed = true;
+        [SerializeField]
         private bool canRotate = true;
         [SerializeField]
         private bool invertDirection = true;
 
         private void FixedUpdate()
         {
+            if (graduallyIncreaseSpeed)
+                t += increaseSpeed * Time.deltaTime;
+
             t = Mathf.Clamp01(t);
 
             SetSpeed(t);
