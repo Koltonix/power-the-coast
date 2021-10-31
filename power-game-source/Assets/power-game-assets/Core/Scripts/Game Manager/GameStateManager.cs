@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using power.data;
 using power.turbine;
+using power.utilities;
 
 namespace power.manager
 {
@@ -19,6 +20,7 @@ namespace power.manager
         private void Start()
         {
             data.Reset();
+            PowerDataToText.Instance.UpdateValue(0);
         }
 
         private void FixedUpdate()
@@ -36,9 +38,12 @@ namespace power.manager
 
         private void InvokePowerCollection()
         {
+            float originalPower = data.powerCollected;
             Turbine[] turbines =  GameObject.FindObjectsOfType<Turbine>();
             foreach (Turbine turbine in turbines)
                 turbine.CollectPower();
+
+            PowerDataToText.Instance.UpdateValue(originalPower);
         }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2158.7822, g: 2263.3008, b: 3302.3398, a: 1}
+  m_IndirectSpecularColor: {r: 2183.4014, g: 2363.0273, b: 3671.4805, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -772,6 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turbinePrefab: {fileID: 1897882183758065355, guid: df218b0636079da4dbf17514b3a65066, type: 3}
   maxSize: {x: 4, y: 4}
+  enableDelay: 25
   offset: {x: 20, y: 0, z: 20}
 --- !u!4 &1090026144
 Transform:
@@ -1385,6 +1386,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1866964841}
     m_Modifications:
+    - target: {fileID: 6923031383499494168, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
+      propertyPath: m_text
+      value: 'POWER
+
+        5 GWh'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923031383499494168, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923031383499494168, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8908c1400cbab8c4a81bcc6fdc9ba4ae, type: 2}
+    - target: {fileID: 6923031383499494168, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3735928721195968052, guid: 8908c1400cbab8c4a81bcc6fdc9ba4ae, type: 2}
+    - target: {fileID: 6923031383499494168, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923031383499494168, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6923031383499494170, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
       propertyPath: m_Name
       value: ScoreText_PRF
@@ -1419,11 +1446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6923031383499494171, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 6923031383499494171, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6923031383499494171, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1455,11 +1482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6923031383499494171, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -100
+      value: -320
       objectReference: {fileID: 0}
     - target: {fileID: 6923031383499494171, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -110
       objectReference: {fileID: 0}
     - target: {fileID: 6923031383499494171, guid: 150ce99b3ff56dc4d9a5c6e4ea79c0cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
