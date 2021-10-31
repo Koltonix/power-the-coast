@@ -22,9 +22,6 @@ namespace power.turbine
     public class Turbine : MonoBehaviour
     {
         [SerializeField]
-        private PowerData data = null;
-
-        [SerializeField]
         private MaterialChange[] animatedMaterials = null;
         [SerializeField]
         private Material destroyingMaterial = null;
@@ -60,6 +57,9 @@ namespace power.turbine
         [SerializeField]
         private RadialMeter meter = null;
         private RotateTurbine turbineRotate = null;
+
+        [HideInInspector]
+        public bool numbersFinishedSending = false;
 
         [SerializeField]
         private UnityEvent onExplode = null;
@@ -109,7 +109,7 @@ namespace power.turbine
 
         public void CollectPower()
         {
-            data.powerCollected += heldPower;
+            TurbineNumbers.Instance.CreateText(this.transform.position, heldPower, this);
             heldPower = 0.0f;
         }
 

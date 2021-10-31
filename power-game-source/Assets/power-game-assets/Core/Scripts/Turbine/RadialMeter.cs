@@ -34,7 +34,7 @@ namespace power.turbine
             startRot.x = 0; startRot.y = 0;
             Vector3 targetRot = new Vector3(0, 0, GetTarget());
 
-            arrow.transform.rotation = Quaternion.Slerp(Quaternion.Euler(startRot), Quaternion.Euler(targetRot), speed * Time.deltaTime);
+            arrow.transform.rotation = Quaternion.Lerp(Quaternion.Euler(startRot), Quaternion.Euler(targetRot), speed * Time.deltaTime);
         }
 
         private float GetTarget()

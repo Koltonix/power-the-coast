@@ -33,6 +33,8 @@ namespace power.manager
         [SerializeField]
         private UnityEvent onEnd = null;
 
+        private float originalPower = 0;
+
         private void Awake()
         {
             if (!Instance)
@@ -72,12 +74,29 @@ namespace power.manager
 
         private void InvokePowerCollection()
         {
-            float originalPower = data.powerCollected;
+            originalPower = data.powerCollected;
+
             Turbine[] turbines =  GameObject.FindObjectsOfType<Turbine>();
             foreach (Turbine turbine in turbines)
                 turbine.CollectPower();
+        }
 
-            PowerDataToText.Instance.UpdateValue(originalPower);
+        public void UpdatePowerText()
+        {
+            Turbine[] turbines =  GameObject.FindObjectsOfType<Turbine>();
+
+            int sendingTurbines = 0;
+            foreach (Turbine turbine in turbines)
+                if (!turbine.numbersFinishedSending)
+                    sendingTurbines++;
+
+            if (sendingTurbines <= 1)
+            { 
+                foreach (Turbine turbine in turbines)
+                    turbine.numbersFinishedSending = false;
+
+                PowerDataToText.Instance.UpdateValue(originalPower);
+            }
         }
         
         public void EndGame()
