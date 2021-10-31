@@ -5,8 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/power-game-assets/Core/Scenes/MainMenu_SCN.unity
+    guid: 9a83e1bad287af041ad060cf75adeede
+  - enabled: 1
+    path: Assets/power-game-assets/Core/Scenes/Development_SCN.unity
+    guid: fda3c2cd13f50b046b47ee69b0b911ae
+  - enabled: 1
+    path: Assets/power-game-assets/Core/Scenes/Transition_SCN.unity
+    guid: 6fa15334e58044e4fa5579ee974e9e20
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6b79787df68968a4abfc5b14fcc1757b, type: 2}
