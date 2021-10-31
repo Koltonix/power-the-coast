@@ -26,6 +26,11 @@ namespace power.utilities
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        public void RestartTransition()
+        {
+            TransitionToScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         public void Quit()
         {
             Application.Quit();

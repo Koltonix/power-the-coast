@@ -61,6 +61,9 @@ namespace power.manager
                 elapsed += Time.deltaTime;  
                 gameTimer -= Time.deltaTime;
 
+                if (gameTimer <= 0)
+                    EndGame();
+
                 timer.text = Mathf.RoundToInt(gameTimer).ToString();
             }
 
