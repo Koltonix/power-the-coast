@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -17,6 +18,9 @@ namespace power.manager
         private PowerData data = null;
 
         [SerializeField]
+        private Highscore highscore = null;
+
+        [SerializeField]
         private float gameTimer = 180;
         [SerializeField]
         private TMP_Text timer = null;
@@ -34,6 +38,8 @@ namespace power.manager
         private UnityEvent onEnd = null;
 
         private float originalPower = 0;
+
+        private Coroutine delay = null;
 
         private void Awake()
         {
@@ -67,6 +73,29 @@ namespace power.manager
                     EndGame();
 
                 timer.text = Mathf.RoundToInt(gameTimer).ToString();
+            }
+
+            if (isGameOver && !highscore.scoresCalculated)
+            {
+                int sendingTurbines = 0;
+                Turbine[] turbines = GameObject.FindObjectsOfType<Turbine>();
+                Debug.Log("TURBINE LENGTH " + turbines.Length);
+                if (turbines.Length <= 0)
+                {
+                    if (delay == null)
+                        delay = StartCoroutine(DelayLoading());
+
+                    return;
+                }
+
+                foreach (Turbine turbine in turbines)
+                    if (turbine.numbersFinishedSending)
+                        sendingTurbines++;
+
+                Debug.Log(sendingTurbines);
+
+                if (sendingTurbines >= turbines.Length)
+                    highscore.GameEnd();
             }
 
             hourImage.fillAmount = elapsed / hourSpeed;
@@ -109,6 +138,12 @@ namespace power.manager
 
             isGameOver = true;
             onEnd?.Invoke();
+        }
+
+        private IEnumerator DelayLoading()
+        {
+            yield return new WaitForSeconds(2.0f);
+            highscore.GameEnd();
         }
     }
 }

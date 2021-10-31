@@ -62,6 +62,7 @@ namespace power.utilities
             }
 
             turbine.numbersFinishedSending = true;
+
             data.powerCollected += value;
             GameStateManager.Instance.UpdatePowerText();
 

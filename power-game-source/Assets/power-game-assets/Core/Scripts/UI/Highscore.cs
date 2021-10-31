@@ -25,26 +25,35 @@ namespace power.utilities
         private GameObject newHighScoreUI = null;
 
         [SerializeField]
+        private GameObject endScreen = null;
+        [SerializeField]
         private TMP_Text highscoreText = null;
         [SerializeField]
         private TMP_Text scoreText = null;
+        
+        public bool scoresCalculated = false;
 
         public void GameEnd()
         {
+            scoresCalculated = true;
+            endScreen.SetActive(true);
+
             float score = data.powerCollected;
             float highscore = PlayerPrefs.GetFloat("HIGHSCORE");
+
             if (score >= highscore)
             {
                 PlayerPrefs.SetFloat("HIGHSCORE", score);
                 PlayerPrefs.Save();
 
                 newHighScoreUI.SetActive(true);
+                highscore = score;
             }
 
             CommonAppliance appliance = appliances[UnityEngine.Random.Range(0, appliances.Length)];
 
             scoreText.text = Math.Round(MWToAppliance(score, appliance.powerRating), 2) +  "s " + appliance.name + " for an hour"; 
-            highscoreText.text = highscore + "MW";
+            highscoreText.text = Math.Round(highscore, 2) + "MW";
         }
 
         // 800-1500 Watts for a Toaster = https://www.cse.org.uk/advice/advice-and-support/how-much-electricity-am-i-using

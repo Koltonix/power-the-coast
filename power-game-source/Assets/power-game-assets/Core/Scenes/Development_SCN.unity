@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2187.7012, g: 2341.664, b: 3561.2617, a: 1}
+  m_IndirectSpecularColor: {r: 2157.3271, g: 2261.5684, b: 3300.0352, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turbinePrefab: {fileID: 1897882183758065355, guid: df218b0636079da4dbf17514b3a65066, type: 3}
   maxSize: {x: 4, y: 4}
-  enableDelay: 25
+  enableDelay: 5
   offset: {x: 20, y: 0, z: 20}
 --- !u!4 &1090026144
 Transform:
@@ -2573,8 +2573,10 @@ MonoBehaviour:
   - name: Phone
     powerRating: 3
   newHighScoreUI: {fileID: 972459449}
+  endScreen: {fileID: 2145845208}
   highscoreText: {fileID: 948649297}
   scoreText: {fileID: 1343064475}
+  scoresCalculated: 0
 --- !u!1001 &1256570565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3061,6 +3063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 1b2e92d6ba5604c4e97c24ce086b43a7, type: 2}
+  highscore: {fileID: 1197948055}
   gameTimer: 150
   timer: {fileID: 2033346827}
   isGameOver: 0
@@ -3092,18 +3095,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2145845208}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 646727167}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
@@ -3120,18 +3111,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1197948055}
-        m_TargetAssemblyTypeName: power.utilities.Highscore, Assembly-CSharp
-        m_MethodName: GameEnd
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
