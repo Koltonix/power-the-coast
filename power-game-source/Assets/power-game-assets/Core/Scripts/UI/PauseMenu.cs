@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace power.utilities
 {
@@ -8,6 +9,11 @@ namespace power.utilities
         private GameObject pauseMenu = null;
 
         private bool isPaused = false;
+
+        [SerializeField]
+        private UnityEvent onPause = null;
+        [SerializeField]
+        private UnityEvent onResume = null;
 
         private void Update()
         {
@@ -21,6 +27,12 @@ namespace power.utilities
 
             Time.timeScale = isPaused ? 0.0f : 1.0f;
             pauseMenu.SetActive(isPaused);
+
+            if (isPaused)
+                onPause?.Invoke();
+
+            else
+                onResume?.Invoke();
         }
 
         private void OnDestroy()
