@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2186.832, g: 2346.6328, b: 3586.3047, a: 1}
+  m_IndirectSpecularColor: {r: 2187.7012, g: 2341.664, b: 3561.2617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2557,9 +2557,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 1b2e92d6ba5604c4e97c24ce086b43a7, type: 2}
+  appliances:
+  - name: Shower
+    powerRating: 8000
+  - name: Toaster
+    powerRating: 1150
+  - name: Microwave
+    powerRating: 900
+  - name: LCD TV
+    powerRating: 150
+  - name: PC
+    powerRating: 130
+  - name: Laptop
+    powerRating: 40
+  - name: Phone
+    powerRating: 3
   newHighScoreUI: {fileID: 972459449}
-  highscoreText: {fileID: 0}
-  scoreText: {fileID: 0}
+  highscoreText: {fileID: 948649297}
+  scoreText: {fileID: 1343064475}
 --- !u!1001 &1256570565
 PrefabInstance:
   m_ObjectHideFlags: 0
