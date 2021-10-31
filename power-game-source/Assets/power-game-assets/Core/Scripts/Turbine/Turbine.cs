@@ -38,6 +38,8 @@ namespace power.turbine
         [SerializeField]
         private bool isDamaged = false;
         [SerializeField]
+        private bool canDamage = true;
+        [SerializeField]
         private Vector2 redDelayRange = new Vector2(0.01f, 0.5f);
 
         [SerializeField]
@@ -77,7 +79,7 @@ namespace power.turbine
             IncreasePower();             
             meter.t = turbineRotate.t;
 
-            if (meter.t > destroyPercentage)
+            if (meter.t > destroyPercentage && canDamage)
                 CheckForDestruction();
 
             else    
@@ -119,7 +121,7 @@ namespace power.turbine
         {
             if (!canExplode)
                 return;
-                
+
             onExplode?.Invoke();
 
             ResetMaterials();
@@ -178,6 +180,11 @@ namespace power.turbine
         {
             foreach (MaterialChange obj in animatedMaterials)
                 obj.rend.material = obj.material;
+        }
+
+        public void SetCanDamage(bool value)
+        {
+            canDamage = value;
         }
     }
 }

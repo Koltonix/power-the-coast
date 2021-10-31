@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2187.7617, g: 2341.3652, b: 3559.6602, a: 1}
+  m_IndirectSpecularColor: {r: 2168.2236, g: 2280.6465, b: 3350.1602, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingText: {fileID: 894069729}
   slider: {fileID: 1506063903}
-  fakeWait: 2.5
+  fakeWait: 3
 --- !u!1 &1602134784
 GameObject:
   m_ObjectHideFlags: 0
