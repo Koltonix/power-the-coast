@@ -42,8 +42,6 @@ namespace power.turbine
         private bool isDamaged = false;
         [SerializeField]
         private Vector2 redDelayRange = new Vector2(0.01f, 0.5f);
-        [SerializeField]
-        private float redDelay = 0.5f;
 
         [SerializeField]
         private float destroyTime = 5.0f;
