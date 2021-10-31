@@ -19,6 +19,11 @@ namespace power.utilities
         [SerializeField]
         private Material material = null;
 
+        [SerializeField]
+        private Vector3 offset = Vector3.zero;
+        [SerializeField]
+        private bool centrePlane = false;
+
         private void Start()
         {
             CreateMesh();
@@ -66,8 +71,9 @@ namespace power.utilities
             for (int y = 0; y <= size.y; y++)
             {
                 for (int x = 0; x <= size.x; x++)
-                {
-                    vertices[i] = (new Vector3(x, 0.0f, y) * padding) - totalSize * .5f;
+                {   
+                    vertices[i] = (new Vector3(x, 0.0f, y) * padding) + offset;
+                    vertices[i] -= (centrePlane) ? (totalSize * .5f) : Vector3.zero;
                     i++;
                 }
             }

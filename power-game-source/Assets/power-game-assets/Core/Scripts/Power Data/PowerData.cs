@@ -6,5 +6,10 @@ namespace power.data
     public class PowerData : ScriptableObject
     {
         public float powerCollected = 0.0f;
+
+        public void Reset()
+        {
+            powerCollected = 0.0f;
+        }
     }
 }
