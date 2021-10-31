@@ -58,9 +58,6 @@ namespace power.turbine
         private RadialMeter meter = null;
         private RotateTurbine turbineRotate = null;
 
-        [HideInInspector]
-        public bool numbersFinishedSending = false;
-
         [SerializeField]
         private UnityEvent onExplode = null;
 
@@ -107,10 +104,12 @@ namespace power.turbine
             heldPower += (Mathf.Lerp(minMegaWatt, maxMegaWatt, turbineRotate.t) * Time.deltaTime) / GameStateManager.hourSpeed;
         }
 
-        public void CollectPower()
+        public float CollectPower()
         {
-            TurbineNumbers.Instance.CreateText(this.transform.position, heldPower, this);
+            float _heldPower = heldPower;
             heldPower = 0.0f;
+
+            return _heldPower;
         }
 
         private void Explode()

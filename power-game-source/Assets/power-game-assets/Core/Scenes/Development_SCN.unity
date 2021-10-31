@@ -1238,6 +1238,7 @@ MonoBehaviour:
   textPrefab: {fileID: 4758900450993683388, guid: 71851c79c175a8543ba2ecbd155a0607, type: 3}
   moveSpeed: 1.25
   initialDelay: 1
+  finished: 1
 --- !u!4 &808714001
 Transform:
   m_ObjectHideFlags: 0
@@ -2363,7 +2364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turbinePrefab: {fileID: 1897882183758065355, guid: df218b0636079da4dbf17514b3a65066, type: 3}
   maxSize: {x: 4, y: 4}
-  enableDelay: 5
+  enableDelay: 25
   offset: {x: 20, y: 0, z: 20}
 --- !u!4 &1090026144
 Transform:

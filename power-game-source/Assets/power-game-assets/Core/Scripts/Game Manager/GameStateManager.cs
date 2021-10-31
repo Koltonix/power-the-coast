@@ -75,28 +75,8 @@ namespace power.manager
                 timer.text = Mathf.RoundToInt(gameTimer).ToString();
             }
 
-            if (isGameOver && !highscore.scoresCalculated)
-            {
-                int sendingTurbines = 0;
-                Turbine[] turbines = GameObject.FindObjectsOfType<Turbine>();
-                Debug.Log("TURBINE LENGTH " + turbines.Length);
-                if (turbines.Length <= 0)
-                {
-                    if (delay == null)
-                        delay = StartCoroutine(DelayLoading());
-
-                    return;
-                }
-
-                foreach (Turbine turbine in turbines)
-                    if (turbine.numbersFinishedSending)
-                        sendingTurbines++;
-
-                Debug.Log(sendingTurbines);
-
-                if (sendingTurbines >= turbines.Length)
-                    highscore.GameEnd();
-            }
+            if (isGameOver && TurbineNumbers.Instance.finished && !highscore.scoresCalculated)
+                highscore.GameEnd();
 
             hourImage.fillAmount = elapsed / hourSpeed;
         }
@@ -104,28 +84,22 @@ namespace power.manager
         private void InvokePowerCollection()
         {
             originalPower = data.powerCollected;
+            float powerToAdd = 0.0f;
 
             Turbine[] turbines =  GameObject.FindObjectsOfType<Turbine>();
             foreach (Turbine turbine in turbines)
-                turbine.CollectPower();
+            {
+                float power = turbine.CollectPower();
+                powerToAdd += power;
+                TurbineNumbers.Instance.QueueValue(turbine.transform.position, power);
+            }
+                
+            TurbineNumbers.Instance.InvokeTextCreation();
         }
 
         public void UpdatePowerText()
         {
-            Turbine[] turbines =  GameObject.FindObjectsOfType<Turbine>();
-
-            int sendingTurbines = 0;
-            foreach (Turbine turbine in turbines)
-                if (!turbine.numbersFinishedSending)
-                    sendingTurbines++;
-
-            if (sendingTurbines <= 1)
-            { 
-                foreach (Turbine turbine in turbines)
-                    turbine.numbersFinishedSending = false;
-
-                PowerDataToText.Instance.UpdateValue(originalPower);
-            }
+            PowerDataToText.Instance.UpdateValue(originalPower);
         }
         
         public void EndGame()

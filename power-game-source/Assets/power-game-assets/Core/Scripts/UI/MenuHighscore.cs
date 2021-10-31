@@ -8,6 +8,8 @@ namespace power.utilities
     {
         [SerializeField]
         private TMP_Text highscoreText = null;
+
+
         
 
         private void Start()
