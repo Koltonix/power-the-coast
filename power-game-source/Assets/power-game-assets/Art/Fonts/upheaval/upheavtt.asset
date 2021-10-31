@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: upheavtt
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 18697695
   material: {fileID: 3735928721195968052}
-  materialHashCode: 0
+  materialHashCode: -1998575457
   m_Version: 1.1.0
   m_SourceFontFileGUID: 58d09537a4e711f47bf92897c5c0d363
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 58d09537a4e711f47bf92897c5c0d363, type: 3}

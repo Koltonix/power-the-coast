@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using power.data;
 using power.turbine;
@@ -11,11 +12,17 @@ namespace power.manager
         [SerializeField]
         private PowerData data = null;
 
+        [SerializeField]
+        private bool canCollect = true;
+
         public static float hourSpeed = 5.0f;
         private float elapsed = 0.0f;
 
         [SerializeField]
         private Image hourImage = null;
+
+        [SerializeField]
+        private UnityEvent onEnd = null;
 
         private void Start()
         {
@@ -31,7 +38,8 @@ namespace power.manager
                 elapsed = 0.0f;
             }
 
-            elapsed += Time.deltaTime;
+            if (canCollect)
+                elapsed += Time.deltaTime;
 
             hourImage.fillAmount = elapsed / hourSpeed;
         }
@@ -44,6 +52,12 @@ namespace power.manager
                 turbine.CollectPower();
 
             PowerDataToText.Instance.UpdateValue(originalPower);
+        }
+        
+        public void EndGame()
+        {
+            canCollect = false;
+            onEnd?.Invoke();
         }
     }
 }
