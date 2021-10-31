@@ -27,13 +27,8 @@ namespace power.manager
             remainingTime = enableDelay;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                EnableTurbines();
-            }
-
             remainingTime -= Time.deltaTime;
             if (remainingTime <= 0)
             {

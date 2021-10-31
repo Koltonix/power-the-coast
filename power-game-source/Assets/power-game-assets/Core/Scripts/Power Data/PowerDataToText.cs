@@ -51,11 +51,11 @@ namespace power.utilities
         {
             for (float i = original; i <= target; i++)
             {
-                text.text = preconcatenated + "\n" + Math.Round(i, 2) + unit;
+                text.text = preconcatenated + Math.Round(i, 2) + unit;
                 yield return new WaitForSeconds(0.1f);
             }
 
-            text.text = preconcatenated + "\n" + Math.Round(target, 2) + unit;
+            text.text = preconcatenated + Math.Round(target, 2) + unit;
             yield return null;
         }
     }

@@ -122,6 +122,8 @@ namespace power.turbine
             ResetMaterials();
             PhysicsTime();
 
+            GameStateManager.Instance.EndGame();
+
             Destroy(meter.gameObject);
             Destroy(this);
             Destroy(turbineRotate);

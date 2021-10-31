@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
+using power.controller;
 using power.data;
 using power.turbine;
 using power.utilities;
@@ -9,11 +11,18 @@ namespace power.manager
 {
     public class GameStateManager : MonoBehaviour
     {
+        public static GameStateManager Instance = null;
+
         [SerializeField]
         private PowerData data = null;
 
         [SerializeField]
-        private bool canCollect = true;
+        private float gameTimer = 180;
+        [SerializeField]
+        private TMP_Text timer = null;
+
+        [SerializeField]
+        private bool isGameOver = false;
 
         public static float hourSpeed = 5.0f;
         private float elapsed = 0.0f;
@@ -23,6 +32,15 @@ namespace power.manager
 
         [SerializeField]
         private UnityEvent onEnd = null;
+
+        private void Awake()
+        {
+            if (!Instance)
+                Instance = this;
+
+            else
+                Destroy(this);
+        }
 
         private void Start()
         {
@@ -38,8 +56,13 @@ namespace power.manager
                 elapsed = 0.0f;
             }
 
-            if (canCollect)
-                elapsed += Time.deltaTime;
+            if (!isGameOver)
+            {
+                elapsed += Time.deltaTime;  
+                gameTimer -= Time.deltaTime;
+
+                timer.text = Mathf.RoundToInt(gameTimer).ToString();
+            }
 
             hourImage.fillAmount = elapsed / hourSpeed;
         }
@@ -56,7 +79,13 @@ namespace power.manager
         
         public void EndGame()
         {
-            canCollect = false;
+            if (isGameOver)
+                return;
+            
+            PlayerController input = FindObjectOfType<PlayerController>();
+            input.enabled = false;
+
+            isGameOver = true;
             onEnd?.Invoke();
         }
     }
