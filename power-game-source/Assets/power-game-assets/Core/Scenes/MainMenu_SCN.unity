@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2187.7168, g: 2344.4434, b: 3573.25, a: 1}
+  m_IndirectSpecularColor: {r: 2166.829, g: 2278.207, b: 3343.5703, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5150,8 +5150,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 617946449369399586, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: increaseSpeedRange.x
-      value: 0.05
+      propertyPath: increaseSpeedRange.y
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 617946449369399586, guid: df218b0636079da4dbf17514b3a65066, type: 3}
       propertyPath: graduallyIncreaseSpeed
@@ -5215,7 +5215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632118373011486807, guid: df218b0636079da4dbf17514b3a65066, type: 3}
       propertyPath: redDelayRange.x
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df218b0636079da4dbf17514b3a65066, type: 3}
