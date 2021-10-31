@@ -80,5 +80,10 @@ namespace power.turbine
         {
             return Random.Range(speedChangeTimeRange.x, speedChangeTimeRange.y);
         }
+
+        public void SetIfCanIncreaseGradually(bool value)
+        {
+            graduallyIncreaseSpeed = value;
+        }
     }
 }

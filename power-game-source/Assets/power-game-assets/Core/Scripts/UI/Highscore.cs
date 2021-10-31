@@ -52,7 +52,7 @@ namespace power.utilities
 
             CommonAppliance appliance = appliances[UnityEngine.Random.Range(0, appliances.Length)];
 
-            scoreText.text = Math.Round(MWToAppliance(score, appliance.powerRating), 2) +  "s " + appliance.name + " for an hour"; 
+            scoreText.text = Math.Round(MWToAppliance(score, appliance.powerRating), 2) +  " " + appliance.name + "s for an hour"; 
             highscoreText.text = Math.Round(highscore, 2) + "MW";
         }
 

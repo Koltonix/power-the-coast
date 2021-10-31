@@ -59,6 +59,9 @@ namespace power.turbine
         private RotateTurbine turbineRotate = null;
 
         [SerializeField]
+        private bool canExplode = true;
+
+        [SerializeField]
         private UnityEvent onExplode = null;
 
         private Coroutine destroyCoroutine = null;
@@ -114,6 +117,9 @@ namespace power.turbine
 
         private void Explode()
         {
+            if (!canExplode)
+                return;
+                
             onExplode?.Invoke();
 
             ResetMaterials();

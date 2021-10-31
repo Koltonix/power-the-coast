@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2186.832, g: 2346.664, b: 3586.2812, a: 1}
+  m_IndirectSpecularColor: {r: 2187.7168, g: 2344.4434, b: 3573.25, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1577,7 +1577,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: You can get more power by risking it in the red zone, but be careful as
-    the turbine might break!
+    the turbine will break if it flashes red for too long!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8908c1400cbab8c4a81bcc6fdc9ba4ae, type: 2}
   m_sharedMaterial: {fileID: 3735928721195968052, guid: 8908c1400cbab8c4a81bcc6fdc9ba4ae, type: 2}
@@ -3320,6 +3320,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688678946}
   m_CullTransparentMesh: 1
+--- !u!114 &1726211096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 617946449369399586, guid: df218b0636079da4dbf17514b3a65066, type: 3}
+  m_PrefabInstance: {fileID: 2061008526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337437d77c033e742b713407125ada48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1739501286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3901,6 +3912,18 @@ MonoBehaviour:
       - m_Target: {fileID: 426443896}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1726211096}
+        m_TargetAssemblyTypeName: power.turbine.RotateTurbine, Assembly-CSharp
+        m_MethodName: SetIfCanIncreaseGradually
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5126,6 +5149,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 617946449369399586, guid: df218b0636079da4dbf17514b3a65066, type: 3}
+      propertyPath: increaseSpeedRange.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 617946449369399586, guid: df218b0636079da4dbf17514b3a65066, type: 3}
+      propertyPath: graduallyIncreaseSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1233266560009860209, guid: df218b0636079da4dbf17514b3a65066, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -5179,8 +5210,12 @@ PrefabInstance:
       value: Turbine_PRF
       objectReference: {fileID: 0}
     - target: {fileID: 3632118373011486807, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-      propertyPath: destroyPercentage
-      value: 1
+      propertyPath: canExplode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632118373011486807, guid: df218b0636079da4dbf17514b3a65066, type: 3}
+      propertyPath: redDelayRange.x
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df218b0636079da4dbf17514b3a65066, type: 3}
