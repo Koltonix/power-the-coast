@@ -39,8 +39,6 @@ namespace power.manager
 
         private float originalPower = 0;
 
-        private Coroutine delay = null;
-
         private void Awake()
         {
             if (!Instance)
@@ -112,12 +110,6 @@ namespace power.manager
 
             isGameOver = true;
             onEnd?.Invoke();
-        }
-
-        private IEnumerator DelayLoading()
-        {
-            yield return new WaitForSeconds(2.0f);
-            highscore.GameEnd();
         }
     }
 }
