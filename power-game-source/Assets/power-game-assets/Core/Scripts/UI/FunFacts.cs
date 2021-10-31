@@ -3,6 +3,7 @@ using TMPro;
 
 namespace power.utilities
 {
+    // Fact Sources: https://www.ons.gov.uk/economy/environmentalaccounts/articles/windenergyintheuk/june2021#toc
     [RequireComponent(typeof(TMP_Text))]
     public class FunFacts : MonoBehaviour
     {

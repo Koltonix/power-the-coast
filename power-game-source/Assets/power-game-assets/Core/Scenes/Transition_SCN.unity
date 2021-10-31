@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2187.7168, g: 2344.4434, b: 3573.2305, a: 1}
+  m_IndirectSpecularColor: {r: 2187.7617, g: 2341.3652, b: 3559.6602, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2073,6 +2073,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   funFacts:
   - In 2019 the United Kingdom had 9,711 Wind Turbines!
+  - Electricity generation from wind power in the UK has increased by 715% from 2009
+    to 2020.
+  - "Turnover from wind energy was nearly \xA36 billion in 2019."
+  - Thanks ONS for the statistics!
+  - The UK has the largest offshore wind farm in the world, which is located off
+    the coast of Yorkshire.
+  - Employment in offshore wind in the UK has increased significantly since 2015,
+    with 7,200 full-time equivalent employees in 2019.
+  - 15 June 2021 is Global Wind Day!
+  - In 2020, the UK generated 75,610 gigawatt hours of electricity from both offshore
+    and onshore wind. This would be enough to power 8.4 trillion LED light bulbs.
+  - Wind energy generation accounted for 24% of total electricity generation (including
+    renewables and non-renewables) in 2020.
 --- !u!1001 &8153505537433750929
 PrefabInstance:
   m_ObjectHideFlags: 0
