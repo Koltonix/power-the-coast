@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace power.manager
@@ -19,10 +18,16 @@ namespace power.manager
 
         private void Start()
         {
-            SpawnTurbines();       
+            SpawnTurbines();
+            EnableTurbines();
+        }
 
-            for (int i = 0; i < maxSize.x; i++)
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
                 EnableTurbines();
+            }
         }
 
         private void SpawnTurbines()
@@ -50,7 +55,8 @@ namespace power.manager
             {
                 for (int x = 0; x < turbinesToShow; x++)
                 {
-                    turbines[x,y].SetActive(true);
+                    if (turbinesToShow <= maxSize.x  && turbinesToShow <= maxSize.y)
+                        turbines[x,y].SetActive(true);
                 }
             }
         }

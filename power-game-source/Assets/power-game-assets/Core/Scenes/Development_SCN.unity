@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2165.0996, g: 2275.2988, b: 3335.625, a: 1}
+  m_IndirectSpecularColor: {r: 2158.7822, g: 2263.3008, b: 3302.3398, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -635,7 +635,7 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 2048
-  speedChange: 0.1
+  speedChange: 0.01
 --- !u!1 &1025396464
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turbinePrefab: {fileID: 1897882183758065355, guid: df218b0636079da4dbf17514b3a65066, type: 3}
-  maxSize: {x: 3, y: 3}
+  maxSize: {x: 4, y: 4}
   offset: {x: 20, y: 0, z: 20}
 --- !u!4 &1090026144
 Transform:
@@ -896,7 +896,7 @@ MonoBehaviour:
   filter: {fileID: 0}
   mesh: {fileID: 0}
   material: {fileID: 2100000, guid: 532999020c27e0c49a427d6737426c5d, type: 2}
-  offset: {x: -30, y: 0, z: -30}
+  offset: {x: -100, y: 0, z: -100}
   centrePlane: 0
 --- !u!4 &1540610543
 Transform:
@@ -1051,7 +1051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
   m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -15, y: 30, z: -15}
+  m_LocalPosition: {x: -30, y: 55, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1184,9 +1184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  smoothTime: 0.5
+  smoothTime: 0.1
   zoomSpeed: 1.25
-  zoom: {x: 15, y: 50}
+  zoom: {x: 15, y: 40}
   zoomLimiter: 50
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1866964837

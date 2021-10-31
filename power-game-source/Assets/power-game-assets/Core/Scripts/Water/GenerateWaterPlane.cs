@@ -28,13 +28,7 @@ namespace power.utilities
         {
             CreateMesh();
         }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Z))
-                ChangeSize(size + Vector2Int.one);
-        }
-
+        
         public void ChangeSize(Vector2Int size)
         {
             this.size = size;

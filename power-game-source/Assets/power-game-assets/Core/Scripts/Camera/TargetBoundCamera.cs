@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using power.turbine;
 
 namespace power.utilities
 {
@@ -35,6 +36,8 @@ namespace power.utilities
 
         private void LateUpdate()
         {
+            SetTargets();
+
             if (targets.Count == 0)
                 return;
 
@@ -43,6 +46,19 @@ namespace power.utilities
             transform.position = Vector3.SmoothDamp(this.transform.position, centre + offset, ref v, smoothTime);
 
             Zoom();
+        }
+
+        private void SetTargets()
+        {
+            List<GameObject> activeTurbines = new List<GameObject>();
+            Turbine[] turbines = GameObject.FindObjectsOfType<Turbine>();
+            foreach (Turbine turbine in turbines)
+            {
+                if (turbine.gameObject.activeInHierarchy)
+                    activeTurbines.Add(turbine.gameObject);
+            }
+
+            targets = activeTurbines;
         }
 
         private void Zoom()

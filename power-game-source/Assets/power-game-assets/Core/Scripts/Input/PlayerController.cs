@@ -28,10 +28,10 @@ namespace power.controller
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKey(KeyCode.Mouse0))
                 ChangeTurbineSpeed(1);
 
-            if (Input.GetKeyDown(KeyCode.Mouse1))
+            if (Input.GetKey(KeyCode.Mouse1))
                 ChangeTurbineSpeed(-1);
         }
 
